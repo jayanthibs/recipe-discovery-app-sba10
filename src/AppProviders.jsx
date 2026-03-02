@@ -1,20 +1,23 @@
-import { createContext, useState } from "react";
-
+import { createContext } from "react";
+import useLocalStorage from "./hooks/useLocalStorage";
 export const FavoritesContext = createContext();
 
 function AppProviders({ children }) {
-  const [favorites, setFavorites] = useState([]);
-
+  const [favorites, setFavorites] = useLocalStorage("favorites", []);
+  
   // Add an ID to favorites
   const addFavorite = (id) => {
     setFavorites((prev) =>
       prev.includes(id) ? prev : [...prev, id]
+    
     );
+    
   };
 
   // Remove an ID from favorites
   const removeFavorite = (id) => {
     setFavorites((prev) => prev.filter((item) => item !== id));
+   
    
   };
 
