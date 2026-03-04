@@ -13,7 +13,7 @@ if(loading) return <Spinner/>
 if(error) return <ErrorMessage error={error}/>
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center bg-blue-50 h-screen">
       <h1 className="text-3xl font-bold p-4">Recipe Category List</h1>
 
      

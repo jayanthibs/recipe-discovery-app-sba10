@@ -18,18 +18,30 @@ const { data, loading, error } = useFetch(
 if(error) return <ErrorMessage error={error}/>
 
     return(
-    <div className="flex flex-col items-center">
-    <h2 className="text-3xl font-bold p-4">{strCategory} Recipes</h2>
-     
-      <ul className="underline text-blue-500 text-lg list-disc">
-        {meals &&
-          meals?.map((meal) => (
-            <Link key={meal.idMeal} to={"/recipe/" + meal.idMeal}>
-              <li>{meal.strMeal}</li>
-            </Link>
-          ))}
-      </ul>
-    </div>
+      <div className="bg-blue-50">
+      <h2 className="text-3xl font-bold p-10 text-center">{strCategory} Recipes</h2>
+
+      
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 w-full  px-6 pb-10">
+
+  {meals?.map((item) => (
+    <Link
+      key={item.idMeal}
+      to={"/recipe/" + item.idMeal}
+      className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition"
+    >
+      <img
+        src={item.strMealThumb}
+        alt={item.strMeal}
+        className="w-full h-48 object-cover"
+      />
+      <h3 className="p-3 font-semibold text-center">
+        {item.strMeal}
+      </h3>
+    </Link>
+  ))}
+</div>
+</div>
     )
 }
 

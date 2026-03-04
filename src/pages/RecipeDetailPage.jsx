@@ -13,12 +13,11 @@ function RecipeDetailPage() {
     useContext(FavoritesContext);
 
   const { data, loading, error } = useFetch(
-    "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + idMeal,
+    "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + idMeal
   );
 
   const meal = data?.meals?.[0];
 
-  // Dynamically extract ingredients
   const ingredients = [];
   if (meal) {
     for (let i = 1; i <= 20; i++) {
@@ -30,45 +29,83 @@ function RecipeDetailPage() {
     }
   }
 
-  if (loading) return <Spinner />;
+  if (loading)
+    return (
+      <div className="flex justify-center items-center h-60">
+        <Spinner />
+      </div>
+    );
+
   if (error) return <ErrorMessage error={error} />;
 
   return (
     <>
       {meal && (
-        <div className="bg-blue-50 flex flex-col items-center">
-          <h2 className="text-3xl font-bold p-4">{meal.strMeal} Recipe</h2>
+        <div className="bg-blue-50 min-h-screen p-6">
+          
+          {/* Header */}
+          <div className="flex justify-between items-center max-w-6xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold">
+              {meal.strMeal}
+            </h2>
 
-          <button
-            onClick={() =>
-              isFavorite(meal.idMeal)
-                ? removeFavorite(meal.idMeal)
-                : addFavorite(meal.idMeal)
-            }
-            className="p-2 transition"
-          >
-            {isFavorite(meal.idMeal) ? (
-              <SolidHeart className="w-10 h-10 text-red-500" />
-            ) : (
-              <OutlineHeart className="w-10 h-10 text-gray-400 hover:text-red-500" />
-            )}
-          </button>
+            <button
+              onClick={() =>
+                isFavorite(meal.idMeal)
+                  ? removeFavorite(meal.idMeal)
+                  : addFavorite(meal.idMeal)
+              }
+              className="p-2 transition"
+            >
+              {isFavorite(meal.idMeal) ? (
+                <SolidHeart className="w-8 h-8 text-red-500" />
+              ) : (
+                <OutlineHeart className="w-8 h-8 text-gray-400 hover:text-red-500" />
+              )}
+            </button>
+          </div>
 
-          <img
-            className="w-120 h-100 rounded-lg"
-            src={meal.strMealThumb}
-            alt={meal.strMeal}
-          />
+          {/* Main Content Grid */}
+          <div className="max-w-6xl mx-auto mt-8 grid gap-10 md:grid-cols-2">
+            
+            {/* Image */}
+            <div>
+              <img
+                className="w-full rounded-2xl shadow-lg"
+                src={meal.strMealThumb}
+                alt={meal.strMeal}
+              />
+            </div>
 
-          <h3 className="text-2xl font-bold p-4 flex justify-start">Ingredients:</h3>
-          <ul>
-            {ingredients.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
+            {/* Ingredients */}
+            <div>
+              <h3 className="text-xl font-semibold mb-4">
+                Ingredients
+              </h3>
 
-          <h3 className="text-2xl font-bold p-4">Instructions:</h3>
-          <p>{meal.strInstructions}</p>
+              <ul className="space-y-2 text-gray-700">
+                {ingredients.map((item) => (
+                  <li
+                    key={item}
+                    className="bg-white p-2 rounded-md shadow-sm"
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Instructions Section */}
+          <div className="max-w-4xl mx-auto mt-12">
+            <h3 className="text-xl font-semibold mb-4">
+              Instructions
+            </h3>
+
+            <p className="text-gray-700 leading-relaxed whitespace-pre-line">
+              {meal.strInstructions}
+            </p>
+          </div>
         </div>
       )}
     </>
