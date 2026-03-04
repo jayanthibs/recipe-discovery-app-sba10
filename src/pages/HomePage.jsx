@@ -13,11 +13,11 @@ if(loading) return <Spinner/>
 if(error) return <ErrorMessage error={error}/>
 
   return (
-    <>
-      <h1>Category List</h1>
+    <div className="flex flex-col items-center">
+      <h1 className="text-3xl font-bold p-4">Recipe Category List</h1>
 
      
-      <ul>
+      <ul className="underline text-blue-500 text-lg list-disc">
         {categories &&
           categories?.map((category) => (
             <Link key={category.idCategory} to={"/category/" + category.strCategory}>
@@ -25,7 +25,7 @@ if(error) return <ErrorMessage error={error}/>
             </Link>
           ))}
       </ul>
-    </>
+    </div>
   );
 }
 

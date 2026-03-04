@@ -18,10 +18,10 @@ const { data, loading, error } = useFetch(
 if(error) return <ErrorMessage error={error}/>
 
     return(
-    <>
-    <h2>{strCategory} Recipes</h2>
+    <div className="flex flex-col items-center">
+    <h2 className="text-3xl font-bold p-4">{strCategory} Recipes</h2>
      
-      <ul>
+      <ul className="underline text-blue-500 text-lg list-disc">
         {meals &&
           meals?.map((meal) => (
             <Link key={meal.idMeal} to={"/recipe/" + meal.idMeal}>
@@ -29,7 +29,7 @@ if(error) return <ErrorMessage error={error}/>
             </Link>
           ))}
       </ul>
-    </>
+    </div>
     )
 }
 
