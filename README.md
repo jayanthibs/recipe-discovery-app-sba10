@@ -121,13 +121,14 @@ https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata
  │
  ├── App.jsx
  └── main.jsx
+```
 
- #Reflections
+# Reflections
 
- 🔹 Most Challenging Part
+## Most Challenging Part
 
 The most challenging part was managing the favorites state efficiently. I needed a way for the Recipe Detail Page to update favorites while keeping the Favorites Page in sync, all without adding favorite buttons elsewhere. Ensuring this state persisted across browser sessions with localStorage added an extra layer of complexity.
 
-🔹 Key Design Decision
+## Key Design Decision
 
 I created a FavoritesContext combined with a custom useLocalStorage hook. This design allowed the Recipe Detail Page to add/remove favorites while the Favorites Page could display them, keeping state centralized, reactive, and persistent. This approach avoided duplicating logic and ensured the app remained maintainable.
