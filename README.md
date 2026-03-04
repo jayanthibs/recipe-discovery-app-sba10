@@ -12,49 +12,49 @@ npm run dev
 
 ## Features
 
-#### Home Page (/)
+### Home Page (/)
 - Fetches and displays all available recipe categories
 - Each category links to its dynamic category page
-#### Category Page (/category/:categoryName)
+### Category Page (/category/:categoryName)
 - Displays recipes filtered by selected category
 - Each recipe links to its detailed recipe page
-#### Recipe Detail Page (/recipe/:recipeId)
-##### Displays:
+### Recipe Detail Page (/recipe/:recipeId)
+#### Displays:
 - Recipe name
 - Recipe image
 - Ingredients list
 - Instructions
 - Includes Add to Favorites / Remove from Favorites functionality
 - Favorite state managed globally via Context API
-#### Favorites Page (/favorites)
+### Favorites Page (/favorites)
 - Displays all saved favorite recipes
 - Persists across browser sessions
 - Shows friendly message if no favorites exist
-#### Search Functionality
+### Search Functionality
 - Search bar available in Navbar
 - avigates to /search?query=RecipeName
 - Displays search results dynamically
 
 ## Core Concepts Implemented
 
-#### State Management & Data Fetching
+### State Management & Data Fetching
 - useState
 - useEffect
 - Loading states (Spinner component)
 - Error handling (ErrorMessage component)
 
-#### Custom Hooks
-##### useFetch
+### Custom Hooks
+#### useFetch
 A reusable hook that:
  - Fetches API data
  - Manages data, loading, and error
  - Used across all pages
-##### useLocalStorage
+#### useLocalStorage
  - Synchronizes state with localStorage
  - Persists favorites across browser sessions
 
-#### Global State (Context API)
-##### FavoritesContext
+### Global State (Context API)
+#### FavoritesContext
 Provides:
  - favorites → array of favorite recipe IDs
  - addFavorite(id)
@@ -62,7 +62,7 @@ Provides:
  - isFavorite(id)
  - Internally uses useLocalStorage to persist data.
 
-#### Routing (React Router)
+### Routing (React Router)
 ` Route	                            Description`<br/>
 `/	                              Categories page`<br/>
 `/category/:categoryName	      Recipes by category`<br/>
