@@ -14,7 +14,7 @@ function App() {
       <NavBar />
 
       <Routes>
-        <Route path="/category" element={<HomePage />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/category/:strCategory" element={<CategoryPage />} />
         <Route path="/recipe/:idMeal" element={<RecipeDetailPage />} />
         <Route path="/favorites" element={<FavoritesPage />} />

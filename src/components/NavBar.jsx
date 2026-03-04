@@ -12,7 +12,7 @@ function NavBar() {
     <nav>
       <ul>
         <li>
-          <Link to="/category">Home</Link>
+          <Link to="/">Home</Link>
         </li>
         <li>
           <Link to="/favorites">Favorite Recipes</Link>
