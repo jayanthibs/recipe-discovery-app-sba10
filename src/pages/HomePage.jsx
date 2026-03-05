@@ -12,21 +12,39 @@ const categories = data?.categories;
 if(loading) return <Spinner/>
 if(error) return <ErrorMessage error={error}/>
 
-  return (
-    <div className="flex flex-col items-center bg-blue-50 h-screen">
-      <h1 className="text-3xl font-bold p-4">Recipe Category List</h1>
-
-     
-      <ul className="underline text-blue-500 text-lg list-disc">
+ return (
+  <div
+    className="min-h-screen flex flex-col md:flex-row"
+    style={{
+      backgroundImage: "url('/src/assets/background.avif')",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+    }}
+  >
+   
+    <div className="w-full md:w-1/2 p-6 md:p-10">
+      <h1 className="text-3xl font-bold text-white mb-6">
+        Recipe Categories
+      </h1>
+      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {categories &&
-          categories?.map((category) => (
-            <Link key={category.idCategory} to={"/category/" + category.strCategory}>
-              <li>{category.strCategory}</li>
+          categories.map((item) => (
+            <Link
+              key={item.idCategory}
+              to={"/category/" + item.strCategory}
+              className="block"
+            >
+              <li className="bg-white px-6 py-4 rounded-xl shadow-lg text-mauve-600 text-lg font-medium hover:bg-gray-100 transition">
+                {item.strCategory}
+              </li>
             </Link>
           ))}
       </ul>
     </div>
-  );
+   
+    <div className="hidden md:block w-1/2"></div>
+  </div>
+);
 }
 
 export default HomePage;
