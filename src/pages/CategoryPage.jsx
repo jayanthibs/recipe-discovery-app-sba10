@@ -18,7 +18,7 @@ const { data, loading, error } = useFetch(
 if(error) return <ErrorMessage error={error}/>
 
     return(
-      <div className="bg-cyan-200 h-screen">
+      <div className="bg-mauve-200 h-screen">
       <h2 className="text-3xl font-bold p-10 text-center">{strCategory} Recipes</h2>
 
       

@@ -41,7 +41,7 @@ function RecipeDetailPage() {
   return (
     <>
       {meal && (
-        <div className="bg-cyan-200 min-h-screen p-6">
+        <div className="bg-mauve-200 min-h-screen p-6">
           
           {/* Header */}
           <div className="flex justify-between items-center max-w-6xl mx-auto">
@@ -97,12 +97,12 @@ function RecipeDetailPage() {
           </div>
 
           {/* Instructions Section */}
-          <div className="max-w-4xl mx-auto mt-12">
+          <div className="max-w-4xl mx-auto mt-12 bg-white rounded-lg p-4">
             <h3 className="text-xl font-bold mb-4">
               Instructions
             </h3>
 
-            <p className="text-black leading-relaxed whitespace-pre-line ">
+            <p className="text-black leading-relaxed whitespace-pre-line font-medium ">
               {meal.strInstructions}
             </p>
           </div>

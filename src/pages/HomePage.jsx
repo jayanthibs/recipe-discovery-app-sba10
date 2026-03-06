@@ -23,7 +23,7 @@ if(error) return <ErrorMessage error={error}/>
   >
    
     <div className="w-full md:w-1/2 p-6 md:p-10">
-      <h1 className="text-3xl font-bold text-black mb-6">
+      <h1 className="text-3xl font-bold text-white mb-6">
         Recipe Categories
       </h1>
       <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">

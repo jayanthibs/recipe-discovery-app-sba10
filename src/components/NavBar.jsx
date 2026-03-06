@@ -8,10 +8,11 @@ function NavBar() {
   const handleSubmit = (e) => {
     e.preventDefault();
     navigate("/search?query="+searchData);
+    setSearchData("");
   };
 
   return (
-    <nav className="bg-gray-900">
+    <nav className="bg-mauve-950">
 <div className="flex flex-col md:flex-row items-center justify-between px-4 md:px-10 lg:px-20 py-6 gap-4">
 
 <h1 className="text-white text-2xl md:text-3xl lg:text-4xl font-bold text-center md:text-left">

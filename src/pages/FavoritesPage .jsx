@@ -18,7 +18,7 @@ function FavoritesPage() {
     );
 
   return (
-    <div className="p-6 bg-cyan-200 h-screen">
+    <div className="p-6 bg-mauve-200 h-screen">
       <h1 className="text-2xl font-bold mb-6 text-center">
         Favorite Recipes
       </h1>

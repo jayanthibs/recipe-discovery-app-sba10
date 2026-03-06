@@ -42,7 +42,7 @@ function SearchPage() {
     );
 
   return (
-    <div className="bg-cyan-200 min-h-screen p-6">
+    <div className="bg-mauve-200 min-h-screen p-6">
       
       {/* Page Title */}
       <h1 className="text-2xl font-bold mb-6 text-center">
