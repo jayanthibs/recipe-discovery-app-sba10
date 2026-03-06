@@ -41,7 +41,7 @@ function RecipeDetailPage() {
   return (
     <>
       {meal && (
-        <div className="bg-blue-50 min-h-screen p-6">
+        <div className="bg-cyan-200 min-h-screen p-6">
           
           {/* Header */}
           <div className="flex justify-between items-center max-w-6xl mx-auto">
@@ -79,11 +79,11 @@ function RecipeDetailPage() {
 
             {/* Ingredients */}
             <div>
-              <h3 className="text-xl font-semibold mb-4">
+              <h3 className="text-xl font-bold mb-4">
                 Ingredients
               </h3>
 
-              <ul className="space-y-2 text-gray-700">
+              <ul className="space-y-2 text-black font-medium">
                 {ingredients.map((item) => (
                   <li
                     key={item}
@@ -98,11 +98,11 @@ function RecipeDetailPage() {
 
           {/* Instructions Section */}
           <div className="max-w-4xl mx-auto mt-12">
-            <h3 className="text-xl font-semibold mb-4">
+            <h3 className="text-xl font-bold mb-4">
               Instructions
             </h3>
 
-            <p className="text-gray-700 leading-relaxed whitespace-pre-line">
+            <p className="text-black leading-relaxed whitespace-pre-line ">
               {meal.strInstructions}
             </p>
           </div>

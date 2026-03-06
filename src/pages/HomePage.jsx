@@ -23,7 +23,7 @@ if(error) return <ErrorMessage error={error}/>
   >
    
     <div className="w-full md:w-1/2 p-6 md:p-10">
-      <h1 className="text-3xl font-bold text-white mb-6">
+      <h1 className="text-3xl font-bold text-black mb-6">
         Recipe Categories
       </h1>
       <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -34,7 +34,7 @@ if(error) return <ErrorMessage error={error}/>
               to={"/category/" + item.strCategory}
               className="block"
             >
-              <li className="bg-white px-6 py-4 rounded-xl shadow-lg text-mauve-600 text-lg font-medium hover:bg-gray-100 transition">
+              <li className="bg-white px-6 py-4 rounded-xl shadow-lg text-black-600 text-lg font-medium hover:bg-gray-100 transition">
                 {item.strCategory}
               </li>
             </Link>
