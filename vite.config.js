@@ -8,3 +8,7 @@ export default defineConfig({
     tailwindcss()
   ],
 })
+
+export default defineConfig({
+  base: "/recipe-discovery-app-sba10/",
+});
