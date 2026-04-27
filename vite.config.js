@@ -5,10 +5,9 @@ import tailwindcss from '@tailwindcss/vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(),
-    tailwindcss()
+    tailwindcss(),
   ],
+  //  base: "/recipe-discovery-app-sba10/"
+
 })
 
-export default defineConfig({
-  base: "/recipe-discovery-app-sba10/",
-});

@@ -2,6 +2,7 @@ import ErrorMessage from "../components/ErrorMessage";
 import useFetch from "../hooks/useFetch";
 import { Link } from "react-router-dom";
 import Spinner from "../components/Spinner";
+import bg from "../assets/background.avif";
 
 function HomePage() {
   const { data, loading, error } = useFetch(
@@ -16,7 +17,7 @@ if(error) return <ErrorMessage error={error}/>
   <div
     className="min-h-screen flex flex-col md:flex-row"
     style={{
-      backgroundImage: "url('/src/assets/background.avif')",
+      backgroundImage: `url(${bg})`,
       backgroundSize: "cover",
       backgroundPosition: "center",
     }}
