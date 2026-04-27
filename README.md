@@ -2,7 +2,7 @@
 
 A modern and responsive Recipe Discovery web application built with React that allows users to browse categories, view recipe details, search meals, and save their favorite recipes using the TheMealDB. 
 
-###Deployed Link: https://jayanthibs.github.io/recipe-discovery-app-sba10/
+### Deployed Link: https://jayanthibs.github.io/recipe-discovery-app-sba10/
 
 ## Installation & Setup
 ````bash
