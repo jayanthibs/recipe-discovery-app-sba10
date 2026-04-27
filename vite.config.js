@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [react(),
     tailwindcss(),
   ],
-  //  base: "/recipe-discovery-app-sba10/"
+   base: "/recipe-discovery-app-sba10/"
 
 })
 
